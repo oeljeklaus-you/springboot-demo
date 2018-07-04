@@ -55,4 +55,10 @@ public class MainController {
         template.opsForValue().set(user.getName(), user);
         return "Saved";
     }
+
+    @GetMapping("/login")
+    public  String login()
+    {
+        return "login";
+    }
 }
