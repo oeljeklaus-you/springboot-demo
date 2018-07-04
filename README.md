@@ -1,5 +1,5 @@
-#SpringBoot-Demo
-一个简单的SpringBootDemo工程，主要是基于SpringBoot2.0.3
+# SpringBoot-Demo
+一个SpringBootDemo工程，主要是基于SpringBoot2.0.3
 ## 主要的功能
 ### 数据持久化MySQL数据库
    主要集成Hibernate
