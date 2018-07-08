@@ -14,8 +14,7 @@ public class WebMvcConfigSelf extends WebMvcConfigurationSupport {
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
         //这里排除登录的请求路径
-        registry.addInterceptor(new LoginInterceptor())
-        .excludePathPatterns("/user/login").addPathPatterns("/**");
+        registry.addInterceptor(new LoginInterceptor()).excludePathPatterns("/user/login").addPathPatterns("/**");
     }
 
     /**

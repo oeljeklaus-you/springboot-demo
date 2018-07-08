@@ -9,6 +9,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.http.codec.json.Jackson2JsonDecoder;
 import org.springframework.http.codec.json.Jackson2JsonEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -34,14 +35,13 @@ public class MainController {
     }
 
     @GetMapping("/findAll")
-    @ResponseBody
-    public List<User> findAll()
+    public String findAll(Model model)
     {
-        //保存数据到mysql
         List<User> users=userService.findAll();
-        //保存到redis
+
         //stringRedisTemplate.opsForValue().set("aaa", "111");
-        return users;
+        model.addAttribute("list",users);
+        return "thymeleaf";
     }
 
     @GetMapping("/save")

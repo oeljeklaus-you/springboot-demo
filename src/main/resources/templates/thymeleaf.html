@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>配置Thymeleaf模板</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div style="text-align: center;margin:0 auto;width: 1000px; ">
+    <h1>配置Thymeleaf模板</h1>
+    <table width="100%" border="1" cellspacing="1" cellpadding="0">
+        <tr>
+            <td>ID</td>
+            <td>姓名</td>
+            <td>年龄</td>
+        </tr>
+        <tr th:each="user : ${list}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.age}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
+
